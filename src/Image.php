@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace kaasplootz\phpShopBackend;
 
-class Image
+use kaasplootz\objectParser\ObjectParser;
+
+class Image extends ObjectParser
 {
     public function __construct(
         private string $id,
-        private string $url,
+        private string $path,
         private string $uploaderId
     ) {}
 
@@ -23,9 +25,9 @@ class Image
     /**
      * @return string
      */
-    public function getUrl(): string
+    public function getPath(): string
     {
-        return $this->url;
+        return $this->path;
     }
 
     /**

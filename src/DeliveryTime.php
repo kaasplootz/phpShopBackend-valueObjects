@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace kaasplootz\phpShopBackend;
 
-class DeliveryTime
+use kaasplootz\objectParser\ObjectParser;
+
+class DeliveryTime extends ObjectParser
 {
     public function __construct(
         private int $minDays,

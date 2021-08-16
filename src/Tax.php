@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace kaasplootz\phpShopBackend;
 
-class Tax
+use kaasplootz\objectParser\ObjectParser;
+
+class Tax extends ObjectParser
 {
     public function __construct(
         private string $id,
-        private string $taxRate
+        private int $taxRate
     ) {}
 
     /**
@@ -20,9 +22,9 @@ class Tax
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getTaxRate(): string
+    public function getTaxRate(): int
     {
         return $this->taxRate;
     }
