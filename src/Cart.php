@@ -12,7 +12,7 @@ class Cart extends ObjectParser
      * @param array|Item[] $items
      */
     public function __construct(
-        private ?array $items = []
+        private array $items = []
     ) {}
 
     /**
