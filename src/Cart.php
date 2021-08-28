@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace kaasplootz\phpShopBackend;
 
 use kaasplootz\objectParser\ObjectParser;
-use kaasplootz\uuid_generator\UuidGenerator;
 
 class Cart extends ObjectParser
 {

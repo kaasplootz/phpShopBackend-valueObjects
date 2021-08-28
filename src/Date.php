@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace kaasplootz\phpShopBackend;
 
-class Date
+use kaasplootz\objectParser\ObjectParser;
+
+class Date extends ObjectParser
 {
     public function __construct(
         private int $day,

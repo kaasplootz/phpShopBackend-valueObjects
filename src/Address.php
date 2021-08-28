@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace kaasplootz\phpShopBackend;
 
-class Address
+use kaasplootz\objectParser\ObjectParser;
+
+class Address extends ObjectParser
 {
     public function __construct(
         private string $street,
