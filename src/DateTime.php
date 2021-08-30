@@ -83,4 +83,20 @@ class DateTime extends ObjectParser
     {
         return $this->time->getSeconds();
     }
+
+    /**
+     * @return Date
+     */
+    public function getDate(): Date
+    {
+        return $this->date;
+    }
+
+    /**
+     * @return Time
+     */
+    public function getTime(): Time
+    {
+        return $this->time;
+    }
 }
