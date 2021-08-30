@@ -8,6 +8,12 @@ use kaasplootz\objectParser\ObjectParser;
 
 class Customer extends ObjectParser
 {
+    /**
+     * @param string|null $id
+     * @param string|null $company
+     * @param Address|null $address
+     * @param array|Order[] $orders
+     */
     public function __construct(
         private bool $registered,
         private ?string $id,
@@ -18,7 +24,8 @@ class Customer extends ObjectParser
         private string $email,
         private string $phoneNumber,
         private Date $birthDate,
-        private ?Address $address
+        private ?Address $address,
+        private array $orders = []
     ) {}
 
     /**
@@ -179,5 +186,13 @@ class Customer extends ObjectParser
     public function setAddress(?Address $address): void
     {
         $this->address = $address;
+    }
+
+    /**
+     * @return array|Order[]
+     */
+    public function getOrders(): array
+    {
+        return $this->orders;
     }
 }
