@@ -9,7 +9,7 @@ use kaasplootz\objectParser\ObjectParser;
 class Cart extends ObjectParser
 {
     /**
-     * @param array|Item[] $items
+     * @param array|CartItem[] $items
      */
     public function __construct(
         private array $items = []
@@ -23,7 +23,7 @@ class Cart extends ObjectParser
         return $this->items;
     }
 
-    public function getItemByItemId(string $itemId): Item|null
+    public function getItemByItemId(string $itemId): CartItem|null
     {
         if (isset($this->items[$itemId])) {
             return $this->items[$itemId];
@@ -38,16 +38,16 @@ class Cart extends ObjectParser
         }
     }
 
-    public function addItem(Item $item): void
+    public function addItem(CartItem $item): void
     {
-        $itemId = Item::generateItemId(array_keys($this->items));
+        $itemId = CartItem::generateItemId(array_keys($this->items));
         $this->items[$itemId] = $item;
     }
 
-    public function updateItemAmount(string $itemId, int $amount): void
+    public function updateItemQuantity(string $itemId, int $quantity): void
     {
         if (isset($this->items[$itemId])) {
-            $this->items[$itemId]->setAmount($amount);
+            $this->items[$itemId]->setQuantity($quantity);
         }
     }
 }

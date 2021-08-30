@@ -7,12 +7,12 @@ namespace kaasplootz\phpShopBackend;
 use kaasplootz\objectParser\ObjectParser;
 use kaasplootz\uuid_generator\UuidGenerator;
 
-class Item extends ObjectParser
+class CartItem extends ObjectParser
 {
     public function __construct(
         private string $itemId,
         private Product $product,
-        private int $amount
+        private int $quantity
     ) {}
 
     /**
@@ -34,17 +34,17 @@ class Item extends ObjectParser
     /**
      * @return int
      */
-    public function getAmount(): int
+    public function getQuantity(): int
     {
-        return $this->amount;
+        return $this->quantity;
     }
 
     /**
-     * @param int $amount
+     * @param int $quantity
      */
-    public function setAmount(int $amount): void
+    public function setQuantity(int $quantity): void
     {
-        $this->amount = $amount;
+        $this->quantity = $quantity;
     }
 
     public static function generateItemId(array $alreadyAssigned): string

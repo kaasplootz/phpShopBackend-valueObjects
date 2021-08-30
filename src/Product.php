@@ -15,8 +15,8 @@ class Product extends ObjectParser
         private Image $image,
         private float $price,
         private Tax $tax,
-        private int $minOrderQuantity,
-        private int $maxOrderQuantity,
+        private int $minQuantity,
+        private int $maxQuantity,
         private float $weight,
         private DeliveryTime $deliveryTime
     ) {}
@@ -72,17 +72,17 @@ class Product extends ObjectParser
     /**
      * @return int
      */
-    public function getMinOrderQuantity(): int
+    public function getMinQuantity(): int
     {
-        return $this->minOrderQuantity;
+        return $this->minQuantity;
     }
 
     /**
      * @return int
      */
-    public function getMaxOrderQuantity(): int
+    public function getMaxQuantity(): int
     {
-        return $this->maxOrderQuantity;
+        return $this->maxQuantity;
     }
 
     /**
