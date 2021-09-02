@@ -1,8 +1,8 @@
 {
     "name": "kaasplootz/php_shop_backend-value_objects",
     "require": {
-        "kaasplootz/object-parser": "^1.0",
-        "kaasplootz/uuid_generator": "^1.0"
+        "kaasplootz/object-parser": "^1",
+        "kaasplootz/uuid_generator": "^1"
     },
     "autoload": {
         "psr-4": {
