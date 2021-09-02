@@ -11,8 +11,8 @@ class Customer extends ObjectParser
     /**
      * @param string|null $id
      * @param string|null $company
-     * @param Address|null $address
-     * @param array|Order[] $orders
+     * @param Address[] $addresses
+     * @param Order[] $orders
      */
     public function __construct(
         private bool $registered,
@@ -24,7 +24,7 @@ class Customer extends ObjectParser
         private string $email,
         private string $phoneNumber,
         private Date $birthDate,
-        private ?Address $address,
+        private array $addresses = [],
         private array $orders = []
     ) {}
 
@@ -101,11 +101,11 @@ class Customer extends ObjectParser
     }
 
     /**
-     * @return Address|null
+     * @return Address[]
      */
-    public function getAddress(): Address|null
+    public function getAddresses(): array
     {
-        return $this->address;
+        return $this->addresses;
     }
 
     /**
@@ -181,15 +181,15 @@ class Customer extends ObjectParser
     }
 
     /**
-     * @param Address|null $address
+     * @param Address[] $addresses
      */
-    public function setAddress(?Address $address): void
+    public function setAddresses(array $addresses): void
     {
-        $this->address = $address;
+        $this->addresses = $addresses;
     }
 
     /**
-     * @return array|Order[]
+     * @return Order[]
      */
     public function getOrders(): array
     {

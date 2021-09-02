@@ -9,12 +9,21 @@ use kaasplootz\objectParser\ObjectParser;
 class Address extends ObjectParser
 {
     public function __construct(
+        private int $id,
         private string $street,
         private string $number,
         private string $zipCode,
         private string $place,
         private string $country
     ) {}
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
 
     /**
      * @return string

@@ -10,8 +10,7 @@ class Image extends ObjectParser
 {
     public function __construct(
         private string $id,
-        private string $path,
-        private string $uploaderId
+        private string $fileName
     ) {}
 
     /**
@@ -25,16 +24,8 @@ class Image extends ObjectParser
     /**
      * @return string
      */
-    public function getPath(): string
+    public function getFileName(): string
     {
-        return $this->path;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUploaderId(): string
-    {
-        return $this->uploaderId;
+        return $this->fileName;
     }
 }
