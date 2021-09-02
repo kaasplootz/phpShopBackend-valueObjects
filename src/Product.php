@@ -9,13 +9,13 @@ use kaasplootz\objectParser\ObjectParser;
 class Product extends ObjectParser
 {
     /**
-     * @param Image[] $images
+     * @param ProductImage[] $productImages
      */
     public function __construct(
         private string $id,
         private string $name,
         private string $description,
-        private array $images,
+        private array $productImages,
         private float $price,
         private Tax $tax,
         private int $minQuantity,
@@ -49,11 +49,11 @@ class Product extends ObjectParser
     }
 
     /**
-     * @return Image[]
+     * @return ProductImage[]
      */
-    public function getImages(): array
+    public function getProductImages(): array
     {
-        return $this->images;
+        return $this->productImages;
     }
 
     /**
